@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EnterpriseMvcApp.Models.ContentVersion>
+
+@{
+    ViewData["Title"] = "Content Versions";
+}
+
+<h2>Content Versions</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var version in Model)
+        {
+            <tr>
+                <td>@version.Title</td>
+                <td>@version.Body</td>
+                <td>@version.CreatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

@@ -1,0 +1,26 @@
+﻿@model EnterpriseMvcApp.Models.Content
+
+@{
+    ViewData["Title"] = "Content Details";
+}
+
+<h2>Content Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">Title</dt>
+    <dd class="col-sm-10">@Model.Title</dd>
+    <dt class="col-sm-2">Body</dt>
+    <dd class="col-sm-10">@Model.Body</dd>
+    <dt class="col-sm-2">Author</dt>
+    <dd class="col-sm-10">@Model.AuthorId</dd>
+    <dt class="col-sm-2">Created At</dt>
+    <dd class="col-sm-10">@Model.CreatedAt</dd>
+    <dt class="col-sm-2">Updated At</dt>
+    <dd class="col-sm-10">@Model.UpdatedAt</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+<a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+<a asp-action="Versions" asp-route-contentId="@Model.Id" class="btn btn-secondary">View Versions</a>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
